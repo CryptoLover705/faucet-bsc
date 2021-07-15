@@ -3,8 +3,8 @@ $(document).ready(function() {
 	//////////////////////////////////////////////////////////////////////////////
 	////     INSERT YOUR NODE RPC URL, NETWORK ID AND GAS PRICE HERE        //////
 	//////////////////////////////////////////////////////////////////////////////
-	var rpcURL = "http://your-fancy-node-url:8545";
-	var networkID = 12345;
+	var rpcURL = "https://speedy-nodes-nyc.moralis.io/dd74f0e2844dca14fad48024/bsc/mainnet";
+	let networkID = '0x38';
 	var minGasPrice = 0;
 	//////////////////////////////////////////////////////////////////////////////
 	////     INSERT THE TOKEN AND FAUCET ADDRESS HERE                       //////
@@ -116,11 +116,11 @@ $(document).ready(function() {
 
 	web3 = new Web3(web3Provider);
 
-	$.getJSON('json/erc20.json', function(data) {
-		contract_token = web3.eth.contract(data).at(token_address);
+	$.getJSON('json/erc20.json', function(abi) {
+		var contract_token = window.eth.Contract(abi).at(token_address);
 	});
-	$.getJSON('json/faucet.json', function(data) {
-		contract_faucet = web3.eth.contract(data).at(faucet_address);
+	$.getJSON('json/faucet.json', function(abi) {
+		var contract_token = window.eth.Contract(abi).at(token_address);
 	});
 
 	setTimeout(function(){ initialize(); }, 1000);
@@ -130,3 +130,10 @@ $(document).ready(function() {
 		getTestTokens();
 	});
 });
+
+
+
+
+
+//=======================================================================\\
+
