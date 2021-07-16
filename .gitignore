@@ -1,0 +1,10 @@
+.next
+.github
+.vscode
+node_modules/
+cache/
+build/
+typechain/
+# artifacts/
+coverage*
+.env
